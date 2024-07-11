@@ -9,139 +9,201 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- Bootstrap4 Duallistbox -->
+  <link rel="stylesheet" href="plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
+  <!-- BS Stepper -->
+  <link rel="stylesheet" href="plugins/bs-stepper/css/bs-stepper.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <style>
+    .file-display-container {
+      border: 1px solid #ccc;
+      padding: 25px;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .file-display-area {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 80px; /* Row gap of 20px, column gap of 80px */
+      justify-content: center;
+      align-items: center;
+    }
+
+    .file-item-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .file-item {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .file-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .file-name {
+      text-align: center;
+      margin-top: 5px;
+      font-size: 0.9em;
+      word-break: break-all;
+      width: 200px;
+    }
+
+    .remove-button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: rgba(255, 0, 0, 0.8);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    #addFilesButton {
+      align-self: center;
+      justify-self: center;
+    }
+
+  </style>
 </head>
+
 <body class="hold-transition sidebar-mini">
-<!-- Site wrapper -->
-<div class="wrapper">
- 
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="Water Quality Monitoring" height="60" width="60">
-  </div>
-
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li>
-        <div class="user-panel mt-1 d-flex">
-          <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="Water Quality Monitoring" height="60" width="60">
+    </div>
+      
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li>
+          <div class="user-panel mt-1 d-flex">
+            <div class="image">
+              <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <h5 class="d-block">Santubong Viewer</h5>
+            </div>
           </div>
-          <div class="info">
-            <h5 class="d-block">Santubong Viewer</h5>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Logout Button -->
-      <li>
-        <button type="button" class="btn btn-block btn-primary">LogOut</button>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li>
+          <button type="button" class="btn btn-block btn-primary">LogOut</button>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a href="index.html" class="brand-link">
         <div class="row mb-4 justify-content-center">
-          <img style="height: 80px; width: auto;" src="SBDLogo.jpeg" >
+          <img style="height: 80px; width: auto;" src="SBDLogo.jpeg">
         </div>
         <div class="row justify-content-center">
           <span class="brand-text">Water Quality Monitoring</span>
         </div>
       </a>
   
-  
-    <!-- Sidebar -->
-    <div class="sidebar">
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Telemetry
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="history.html" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                History
-              </p>
-            </a>
-          </li>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Accounting
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
+      <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
-                <a href="accountingExpenses.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Expenses</p>
+                <a href="./index.html" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>Data Telemetry</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="accountingIncome.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Income</p>
+                <a href="history.html" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>History</p>
+                </a>
+              </li>
+              <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-chart-pie"></i>
+                  <p>
+                    Accounting
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="accountingExpenses.html" class="nav-link active">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Expenses</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="accountingIncome.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Income</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="gallery.html" class="nav-link">
+                  <i class="nav-icon far fa-image"></i>
+                  <p>Gallery</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="about.html" class="nav-link">
+                  <i class="nav-icon fas fa-copy"></i>
+                  <p>About</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="settings.html" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Settings</p>
                 </a>
               </li>
             </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                About
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="settings.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Settings
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
-
+          </nav>
+        </div>
+      </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -204,6 +266,15 @@
                 <label for="inputRemarks">Remarks</label>
                 <textarea id="inputRemarks" class="form-control" rows="4"></textarea>
               </div>
+              <div class="form-group">
+                <label for="fileUpload">Upload Files</label>
+                <div id="fileDisplayContainer" class="file-display-container">
+                  <div id="fileDisplayArea" class="file-display-area">
+                    <button type="button" id="addFilesButton" class="btn btn-primary">Click to add files</button>
+                    <input type="file" id="fileInput" multiple style="display: none;">
+                  </div>
+                </div>
+              </div>
             </div>
           <!-- /.card -->
         </div>
@@ -239,22 +310,92 @@
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Select2 -->
+<script src="plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/moment/moment.min.js"></script>
+<!-- inputmask -->
+<script src="plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- tempusdominus bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- bootstrap switch -->
+<script src="plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- bs-stepper -->
+<script src="plugins/bs-stepper/js/bs-stepper.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-<!-- Date Picker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
+<!-- Page specific script -->
 <script>
-  $(document).ready(function() {
-    $('#date-input').datepicker({
-      format: 'mm/dd/yyyy' // Customize the date format as needed
+  $(function () {
+
+    //Date picker
+    $('#reservationdate').datetimepicker({
+        format: 'L'
     });
-  });
+
+  })
+</script>
+
+<!-- File Upload JS -->
+<script>
+document.getElementById('addFilesButton').addEventListener('click', function() {
+  document.getElementById('fileInput').click();
+});
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+  const files = event.target.files;
+  const fileDisplayArea = document.getElementById('fileDisplayArea');
+
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    const fileItemContainer = document.createElement('div');
+    fileItemContainer.classList.add('file-item-container');
+
+    const fileItem = document.createElement('div');
+    fileItem.classList.add('file-item');
+
+    const fileImg = document.createElement('img');
+    fileImg.src = URL.createObjectURL(file);
+    fileImg.addEventListener('click', function() {
+      window.open(URL.createObjectURL(file), '_blank');
+    });
+
+    const fileName = document.createElement('div');
+    fileName.classList.add('file-name');
+    fileName.textContent = file.name;
+
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove-button');
+    removeButton.textContent = 'X';
+    removeButton.addEventListener('click', function() {
+      fileDisplayArea.removeChild(fileItemContainer);
+      if (fileDisplayArea.childElementCount === 1) {
+        fileDisplayArea.style.justifyContent = 'center';
+      }
+    });
+
+    fileItem.appendChild(fileImg);
+    fileItem.appendChild(removeButton);
+    fileItemContainer.appendChild(fileItem);
+    fileItemContainer.appendChild(fileName);
+    fileDisplayArea.insertBefore(fileItemContainer, document.getElementById('addFilesButton'));
+  }
+
+  // Adjust the button position
+  fileDisplayArea.style.justifyContent = 'flex-start';
+
+  // Clear the input
+  event.target.value = '';
+});
+
 </script>
 
 
