@@ -531,7 +531,7 @@ $(function () {
         const barChartData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets: [{
-                label: `Expenses in ${year}`,
+                label: `Income in ${year}`,
                 backgroundColor: 'rgba(60,141,188,0.9)',
                 borderColor: 'rgba(60,141,188,0.8)',
                 data: expenseData[year]
@@ -550,7 +550,7 @@ $(function () {
                 maintainAspectRatio: false,
                 title: {
                     display: true,
-                    text: `Expenses for ${year}`,
+                    text: `Income for ${year}`,
                     fontSize: 18,
                     fontColor: '#333'
                 },
@@ -656,7 +656,7 @@ $(function () {
                 responsive: true,
                 title: {
                     display: true,
-                    text: `Expenses Categories for ${year}`,
+                    text: `Income Categories for ${year}`,
                     fontSize: 18,
                     fontColor: '#333'
                 },
