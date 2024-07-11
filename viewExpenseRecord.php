@@ -27,7 +27,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 
-  </head>
+</head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Preloader -->
