@@ -138,7 +138,7 @@
               <div class="row mb-4 align-items-center">
                 <div class="col-sm-3">
                     <ol class="breadcrumb float-sm-left">
-                      <li class="breadcrumb-item"><a href="accountingExpenses.html"><i class="fas fa-arrow-left"></i></a></li>
+                      <li class="breadcrumb-item"><a href="accountingIncome.html"><i class="fas fa-arrow-left"></i></a></li>
                     </ol>
                   </div>
                 <div class="col-sm-6">
@@ -154,7 +154,7 @@
               <div class="col">
                 <div class="card card-primary">
                   <div class="card-header">
-                  <h3 class="card-title">Expense Record Details</h3>
+                  <h3 class="card-title">Income Record Details</h3>
                   </div>
                   <div class="card-body">
                       <!-- PHP code to fetch and display record details -->
@@ -167,7 +167,7 @@
                         $remarks = "-";
                       ?>
                       <div class="form-group">
-                        <label for="inputName">Expense Item</label>
+                        <label for="inputName">Income Item</label>
                         <input type="text" id="inputName" class="form-control" value="<?php echo $expenseItem; ?>" readonly>
                       </div>
                       <div class="form-group">
