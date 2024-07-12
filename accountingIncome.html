@@ -205,7 +205,7 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-3"><br>
+                <div class="col-3">
                   <div class="form-group">
                     <input type="text" id="daterange-filter" class="form-control" placeholder="Select date range">
                   </div>
@@ -453,38 +453,55 @@
     });
   </script>
 
-<!-- Data Table Script -->
-<script>
+ <!-- Data Table Script -->
+ <script>
   $(document).ready(function() {
-    // Initialize DataTable with sorting on the Date column (index 0)
+    // Initialize DataTable
     var table = $('#expense-table').DataTable({
       "order": [[0, "desc"]],
       "columnDefs": [
-        {
-          "targets": 0,
-          "type": "date-eu"
-        }
+        { "targets": 0, "type": "date-eu" }
       ]
     });
 
-    // Filter table based on category selection
-    $('#category-filter').on('change', function() {
-      var selectedCategory = $(this).val();
-      if (selectedCategory) {
-        table.column(3).search('^' + selectedCategory + '$', true, false).draw();
-      } else {
-        table.column(3).search('').draw();
-      }
+    // Initialize Select2
+    $('.select2').select2();
+
+    // Initialize date range picker
+    $('#daterange-filter').daterangepicker({
+      opens: 'left',
+      locale: { format: 'DD/MM/YYYY' }
     });
+
+    // Apply both filters
+    $('#category-filter, #daterange-filter').on('change keyup', function() {
+      table.draw();
+    });
+
+    // Custom filtering function for category and date range
+    $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+      var min = $('#daterange-filter').data('daterangepicker').startDate;
+      var max = $('#daterange-filter').data('daterangepicker').endDate;
+      var date = moment(data[0], 'DD/MM/YYYY');
+      var category = $('#category-filter').val();
+      var rowCategory = data[3];
+
+      if (
+        ((min === null && max === null) || (min === null && date <= max) || (min <= date && max === null) || (min <= date && date <= max)) &&
+        (category === "" || rowCategory === category)
+      ) {
+        return true;
+      }
+      return false;
+    });
+
+    // Custom date sorting (European format dd/mm/yyyy)
+    $.fn.dataTable.ext.type.order['date-eu-pre'] = function(d) {
+      var parts = d.split('/');
+      return Date.parse(parts[2] + '-' + parts[1] + '-' + parts[0]);
+    };
   });
-
-  // Custom date sorting (European format dd/mm/yyyy)
-  $.fn.dataTable.ext.type.order['date-eu-pre'] = function(d) {
-    var parts = d.split('/');
-    return Date.parse(parts[2] + '-' + parts[1] + '-' + parts[0]);
-  };
 </script>
-
 <!-- Page specific script -->
 <script>
   $(function () {
