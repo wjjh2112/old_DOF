@@ -203,6 +203,9 @@
                     </select>
                   </div>
                 </div>
+                <div class="col-3">
+                  <input type="text" id="daterange-filter" class="form-control" placeholder="Select date range">
+                </div>
               </div>
             </div>
             <!-- /.card-header -->
@@ -402,7 +405,9 @@
 <script src="plugins/select2/js/select2.full.min.js"></script>
 <!-- jQuery UI -->
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-
+<!-- Daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -444,39 +449,73 @@
     });
   </script>
 
+<!-- Data Table Script -->
 <script>
   $(document).ready(function() {
-      // Check if DataTable is already initialized
-      if (!$.fn.DataTable.isDataTable('#expense-table')) {
-          // Initialize DataTable with sorting on the Date column (index 0)
-          var table = $('#expense-table').DataTable({
-              "order": [[0, "desc"]],
-              "columnDefs": [
-                  {
-                      "targets": 0,
-                      "type": "date-eu"
-                  }
-              ]
-          });
+    // Initialize DataTable with sorting on the Date column (index 0)
+    var table = $('#expense-table').DataTable({
+      "order": [[0, "desc"]],
+      "columnDefs": [
+        {
+          "targets": 0,
+          "type": "date-eu"
+        }
+      ]
+    });
 
-          // Filter table based on category selection
-          $('#category-filter').on('change', function() {
-              var selectedCategory = $(this).val();
-              if (selectedCategory) {
-                  table.column(3).search('^' + selectedCategory + '$', true, false).draw();
-              } else {
-                  table.column(3).search('').draw();
-              }
-          });
+    // Filter table based on category selection
+    $('#category-filter').on('change', function() {
+      var selectedCategory = $(this).val();
+      if (selectedCategory) {
+        table.column(3).search('^' + selectedCategory + '$', true, false).draw();
+      } else {
+        table.column(3).search('').draw();
       }
+    });
+
+    // Initialize date range picker
+    $('#daterange-filter').daterangepicker({
+      opens: 'left',
+      locale: {
+        format: 'DD/MM/YYYY'
+      }
+    }, function(start, end, label) {
+      table.draw();
+    });
+
+    // Custom filtering function for date range
+    $.fn.dataTable.ext.search.push(
+      function(settings, data, dataIndex) {
+        var min = $('#daterange-filter').data('daterangepicker').startDate;
+        var max = $('#daterange-filter').data('daterangepicker').endDate;
+        var date = moment(data[0], 'DD/MM/YYYY');
+        
+        if (
+          (min === null && max === null) ||
+          (min === null && date <= max) ||
+          (min <= date   && max === null) ||
+          (min <= date   && date <= max)
+        ) {
+          return true;
+        }
+        return false;
+      }
+    );
   });
 
   // Custom date sorting (European format dd/mm/yyyy)
   $.fn.dataTable.ext.type.order['date-eu-pre'] = function(d) {
-      var parts = d.split('/');
-      return Date.parse(parts[2] + '-' + parts[1] + '-' + parts[0]);
+    var parts = d.split('/');
+    return Date.parse(parts[2] + '-' + parts[1] + '-' + parts[0]);
   };
 
+  // Initialize Select2 Elements
+  $(function () {
+    $('.select2').select2();
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    });
+  });
 </script>
 
 <!-- Page specific script -->
