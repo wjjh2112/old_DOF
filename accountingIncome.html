@@ -476,35 +476,6 @@
         table.column(3).search('').draw();
       }
     });
-
-    // Initialize date range picker
-    $('#daterange-filter').daterangepicker({
-      opens: 'left',
-      locale: {
-        format: 'DD/MM/YYYY'
-      }
-    }, function(start, end, label) {
-      table.draw();
-    });
-
-    // Custom filtering function for date range
-    $.fn.dataTable.ext.search.push(
-      function(settings, data, dataIndex) {
-        var min = $('#daterange-filter').data('daterangepicker').startDate;
-        var max = $('#daterange-filter').data('daterangepicker').endDate;
-        var date = moment(data[0], 'DD/MM/YYYY');
-        
-        if (
-          (min === null && max === null) ||
-          (min === null && date <= max) ||
-          (min <= date   && max === null) ||
-          (min <= date   && date <= max)
-        ) {
-          return true;
-        }
-        return false;
-      }
-    );
   });
 
   // Custom date sorting (European format dd/mm/yyyy)
@@ -512,14 +483,6 @@
     var parts = d.split('/');
     return Date.parse(parts[2] + '-' + parts[1] + '-' + parts[0]);
   };
-
-  // Initialize Select2 Elements
-  $(function () {
-    $('.select2').select2();
-    $('.select2bs4').select2({
-      theme: 'bootstrap4'
-    });
-  });
 </script>
 
 <!-- Page specific script -->
