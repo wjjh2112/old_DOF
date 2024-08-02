@@ -1,0 +1,94 @@
+{
+    "telemetry": "Telemetri",
+    "history": "Sejarah",
+    "accounting": "Perakaunan",
+    "expenses": "Perbelanjaan",
+    "income": "Pendapatan",
+    "gallery": "Galeri",
+    "about": "Tentang",
+    "settings": "Tetapan",
+
+    "dataTelemetry": "Telemetri Data",
+    "site": "Tapak",
+    "logger": "Logger",
+    "dwCSV": "Muat Turun CSV",
+    "selectDataField": "Pilih Medan Data",
+    "temp": "Suhu",
+    "dissOxy": "Oksigen Terlarut",
+    "dissOxyPerc": "Peratusan Oksigen Terlarut",
+    "ph": "Nilai pH",
+    "salinity": "Kesalinusan",
+    "moreInfo": "Maklumat lanjut",
+
+    "realTime": "Masa Nyata",
+    "weekly": "Minguan",
+    "monthly": "Bulanan",
+    "yearly": "Tahunan",
+
+    "currentTemp": "Suhu Semasa",
+    "tempExtremes": "Ekstrem Suhu",
+
+    "currentDissOxy": "Oksigen Terlarut Semasa",
+    "dissOxyExtremes": "Ekstrem Oksigen Terlarut",
+
+    "currentDissOxyPerc": "Peratusan Oksigen Terlarut Semasa",
+    "dissOxyPercExtremes": "Ekstrem Peratusan Oksigen Terlarut",
+
+    "currentPH": "Nilai pH Semasa",
+    "phExtremes": "Ekstrem Nilai pH",
+
+    "currentSalinity": "Kesalinusan Semasa",
+    "salinityExtremes": "Ekstrem Kesalinusan",
+
+    "search": "Cari",
+
+    "loggerID": "ID Logger",
+    "date": "Tarikh",
+    "time": "Masa",
+    "tempDeg": "Suhu (&deg;C)",
+    "do": "DO (mgL)",
+    "do%": "DO (%)",
+    "ec": "EC",
+    "hex": "HEX",
+
+    "expRec": "Rekod Perbelanjaan",
+    "addExpRec": "Tambah Rekod Perbelanjaan",
+    "genExpRec": "Jana Rekod Perbelanjaan",
+    "addNewExpRec": "Tambah Rekod Perbelanjaan Baharu",
+    "expAnalysis": "Analisis Perbelanjaan",
+    "expCategoryAnalysis": "Analisis Kategori Perbelanjaan",
+
+    "amount": "Jumlah",
+    "expItem": "Item Perbelanjaan",
+    "incomeItem": "Item Pendapatan",
+    "category": "Kategori",
+    "remarks": "Komen",
+    "uploadFiles": "Muat Naik Fail",
+    "clickAddFiles": "Klik untuk menambah fail",
+    "viewRec": "Papar Rekod",
+    
+
+    "submit": "Hantar",
+    "genPDF": "Jana PDF",
+    "print": "Cetak",
+
+    "incomeRec": "Rekod Pendapatan",
+    "addIncomeRec": "Tambah Rekod Pendapatan",
+    "genIncomeRec": "Jana Rekod Pendapatan",
+    "addNewIncomeRec": "Jana Rekod Pendapatan Baharu",
+    "incomeAnalysis": "Analisis Pendapatan",
+    "incomeCategoryAnalysis": "Analisis Kategori Pendapatan",
+
+    "userProfile": "Profil Pengguna",
+    "firstName": "Nama Pertama",
+    "lastName": "Nama Keluarga",
+    "e-mail": "E-mail",
+    "edit": "Edit",
+
+    "organization": "Organisasi",
+
+    "language": "Bahasa",
+    "changeLang": "Tukar Bahasa",
+    
+    "logout": "Log Keluar"
+}

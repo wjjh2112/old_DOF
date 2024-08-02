@@ -1,0 +1,96 @@
+{
+    "telemetry": "Telemetry",
+    "history": "History",
+    "accounting": "Accounting",
+    "expenses": "Expenses",
+    "income": "Income",
+    "gallery": "Gallery",
+    "about": "About",
+    "settings": "Settings",
+
+    "dataTelemetry": "Data Telemetry",
+    "site": "Site",
+    "logger": "Logger",
+    "dwCSV": "Download CSV",
+    "selectDataField": "Select Data Field",
+    "temp": "Temperature",
+    "dissOxy": "Dissolved Oxygen",
+    "dissOxyPerc": "Dissolved Oxygen Percentage",
+    "ph": "pH Value",
+    "salinity": "Salinity",
+    "moreInfo": "More info",
+
+    "realTime": "Real Time",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+
+    "currentTemp": "Current Temperature",
+    "tempExtremes": "Temperature Extremes",
+
+    "currentDissOxy": "Current Dissolved Oxygen",
+    "dissOxyExtremes": "Dissolved Oxygen Extremes",
+
+    "currentDissOxyPerc": "Current Dissolved Oxygen Percentage",
+    "dissOxyPercExtremes": "Dissolved Oxygen Percentage Extremes",
+
+    "currentPH": "Current pH Value",
+    "phExtremes": "pH Value Extremes",
+
+    "currentSalinity": "Current Salinity",
+    "salinityExtremes": "Salinity Extremes",
+
+    "search": "Search",
+
+    "loggerID": "Logger ID",
+    "date": "Date",
+    "time": "Time",
+    "tempDeg": "Temp (&deg;C)",
+    "do": "DO (mgL)",
+    "do%": "DO (%)",
+    "ec": "EC",
+    "hex": "HEX",
+
+    "expRec": "Expenses Record",
+    "addExpRec": "Add Expenses Record",
+    "genExpRec": "Generate Expenses Record",
+    "addNewExpRec": "Add New Expense Record",
+    "expAnalysis": "Expense Analysis",
+    "expCategoryAnalysis": "Expense Category Analysis",
+
+    "amount": "Amount",
+    "expItem": "Expenses Item",
+    "incomeItem": "Income Item",
+    "category": "Category",
+    "remarks": "Remarks",
+    "uploadFiles": "Upload Files",
+    "clickAddFiles": "Click to add files",
+    "viewRec": "View Record",
+    
+
+    "submit": "Submit",
+    "genPDF": "Generate PDF",
+    "print": "Print",
+
+    "incomeRec": "Income Record",
+    "addIncomeRec": "Add Income Record",
+    "genIncomeRec": "Generate Income Record",
+    "addNewIncomeRec": "Add New Income Record",
+    "incomeAnalysis": "Income Analysis",
+    "incomeCategoryAnalysis": "Income Category Analysis",
+
+    "userProfile": "User Profile",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "e-mail": "E-mail",
+    "edit": "Edit",
+
+    "organization": "Organization",
+
+    "language": "Language",
+    "malay": "Malay",
+    "english": "English",
+    "changeLang": "Change Language",
+    
+    "logout": "Log Out"
+}
