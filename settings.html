@@ -172,11 +172,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="firstNameInput">First Name</label>
-                                <input type="text" class="form-control" placeholder="Enter First Name">
+                                <input type="text" class="form-control" placeholder="First Name" readonly>
                               </div>
                               <div class="col">
                                 <label for="firstNameInput">Last Name</label>
-                                <input type="text" class="form-control" placeholder="Enter Last Name">
+                                <input type="text" class="form-control" placeholder="Last Name" readonly>
                               </div>
                         </div>
                     </div>
@@ -185,16 +185,15 @@
                         <div class="row">
                             <div class="col">
                                 <label for="Email">E-mail</label>
-                                <input type="email" class="form-control" placeholder="">
+                                <input type="email" class="form-control" placeholder="e-mail" readonly>
                               </div>
                         </div>
                     </div>
-                    
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Save</button>
+                  <button class="btn btn-primary">Edit</button>
                 </div>
               </form>
             </div>
@@ -223,36 +222,30 @@
                 <!-- general form elements -->
                 <div class="card card-default">
                 <div class="card-header">
-                    <h3 class="card-title">Security</h3>
+                    <h3 class="card-title">Language</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
                     <div class="card-body">
+                      <div class="col-sm-6">
+                        <!-- radio -->
                         <div class="form-group">
-                                <div class="col">
-                                    <label for="firstNameInput">Current Password</label>
-                                    <input type="password" class="form-control" placeholder="">
-                                </div>
-                                
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="malay">
+                            <label class="form-check-label">Malay</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="english" checked>
+                            <label class="form-check-label">English</label>
+                          </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col">
-                                <label for="firstNameInput">Password</label>
-                                <input type="password1" class="form-control" placeholder="Enter New Password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                                <div class="col">
-                                    <label for="Email">Confirm Password</label>
-                                    <input type="password2" class="form-control" placeholder="Confirm New Password">
-                                </div>
-                        </div>
+                      </div>
                     </div>
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Change password</button>
+                    <button type="submit" class="btn btn-primary">Change Language</button>
                     </div>
                 </form>
                 </div>
